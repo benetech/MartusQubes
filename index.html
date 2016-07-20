@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
+		<title>Using Martus on Qubes</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -21,10 +21,12 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
+							<li><a href="#intro">Introduction</a></li>
+							<li><a href="#one">Requirements</a></li>
+							<li><a href="#two">Installing Qubes</a></li>
+							<li><a href="#three">Template Setup</a></li>
+							<li><a href="#four">Installing Martus</a></li>
+							<li><a href="#five">Notes</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -36,154 +38,214 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>Hyperspace</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
+							<h1>Using Martus on Qubes OS</h1>
+							<p>Step-by-step guide for installing and using the <a href="https://martus.org">Martus secure documentation tool</a><br />
+							on the <a href="https://qubes-os.org">Qubes operating system</a>.</p>
+							<p>This guide is based on this <a href="https://www.qubes-os.org/doc/martus/">installation guide</a>,
+							as well as the Qubes <a href="https://www.qubes-os.org/getting-started/">'Getting Started'</a> guide.</p>
+							
 							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
+								<li><a href="#one" class="button scrolly">Let's Go!</a></li>
 							</ul>
 						</div>
 					</section>
-
+					
 				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
+					<section id="one" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<h2>Downloads and Materials</h2>
+							<p>Below we will list the various downloads and equipment that will be used during this guide. Please note this is just one method for Qubes installation, and other options are documented on the <a href="https://www.qubes-os.org/getting-started/">Qubes website.</a></p>
+							<h3>Software</h3>
 							<div class="features">
 								<section>
-									<span class="icon major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+									<span class="icon major fa-download"></span>
+									<h3>Qubes OS Installation .iso</h3>
+									<p>Download the latest .iso image for Qubes OS from <a href="https://www.qubes-os.org/downloads/">their webpage</a>. At the time of this writing, the version used is release 3.1.</p>
 								</section>
 								<section>
 									<span class="icon major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+									<h3>Verify the Download</h3>
+									<p>We recommend verifying the hashes and signatures associated with the downloaded file. Qubes provides verification instructions <a href="https://www.qubes-os.org/doc/verifying-signatures/">here</a>.</p>
+								</section>	
+							</div>
+							<h3>Hardware</h3>
+							<div class="features">
+								<section>
+									<span class="icon major fa-usb"></span>
+									<h3>USB Thumbdrive Larger than 5GB</h3>
+									<p>One USB thumbdrive will be used to create a bootable installation disk for initial set-up of Qubes OS.</p>
 								</section>
 								<section>
-									<span class="icon major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+									<span class="icon major fa-usb"></span>
+									<h3>USB Thumbdrive Larger than 32GB</h3>
+									<p>We will be using a large thumbdrive as the installation destination for Qubes OS. We recommend using a thumbdrive of at least 32GB and 3.0 standard for optimal performance.</p>
 								</section>
 								<section>
 									<span class="icon major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-chain"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-diamond"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+									<h3>Check Hardware Compatibility </h3>
+									<p>A device with at least two USB ports is advised. Not all devices will support all Qubes OS features. Check out the list <a href="https://www.qubes-os.org/hcl/">here</a> for updated data on feature support.</p>
 								</section>
 							</div>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn more</a></li>
-							</ul>
 						</div>
 					</section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="field half first">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="5"></textarea>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
+				<!-- Two -->
+					<section id="two" class="wrapper style2 spotlights">
+						<section>
+							<div class="content">
+							<h1>Installing Qubes</h1>
+								<div class="inner">
+									<h3>1. Create Bootable USB from .iso </h3>
+									<p>Create a bootable installation media on the smaller USB thumbdrive using a tool like <a href="http://rufus.akeo.ie/">Rufus for Windows</a>. Detailed instructions and other platforms are covered <a href="https://www.qubes-os.org/doc/installation-guide/">here.</a></p>
+								</div>
+								<div class="inner">
+									<h3>2. Format the large USB thumbdrive</h3>
+									<p>To ensure an easy installation process, format the >32GB thumbdrive using something like an exFAT format.</p>
+								</div>
+								<div class="inner">
+									<h3>3. Prepare for Installation</h3>
+									<ul>
+										<li>Shutdown your machine and plug in both USB thumbdrives.</li>
+										<li>If you are using a laptop, ensure the machine is plugged into a power supply and will not sleep during the process.</li> 
+										<li>Press the power button on your machine, and immediately press the Boot option key (usually F12, F2, or Option key).</li>
+										<li>Choose to boot from USB drive on selection screen.</li>
 									</ul>
-								</section>
+								</div>
+								<div class="inner">
+									<h3>4. Install Configuration</h3>
+									<ul>
+										<li>Once USB boots, select 'Install Qubes' from initial menu.</li>
+										<li>Pick your language, date/time format, and keyboard preferences.</li>
+										<li>Installation Source should default to 'Local Media'</li>
+										<li>Software Selection should default to 'Qubes OS with KDE and Xfce'</li>
+									</ul>
+								</div>
+								
+								<div class="inner">
+									<h3>5. Installation Destination</h3>
+									<p>Installation Destination needs to be set to the larger USB thumbdrive</p>
+									<ul>
+										<li>Follow any prompts to reclaim space by deleting existing partitions.</li>
+										<li>Pick 'Automatically configure my Qubes installation to the disk(s) I selected and return me to the main menu.'</li>
+										<li>We highly recommend selecting the 'encrypt my data' option and setting a strong passphrase. With this option, the whole diskis encrypted in the case of loss or theft.</li>
+									</ul>
+								</div>
+								<div class="inner">
+									<h3>6. Click 'Begin Installation'</h3>
+									<p>This process can take 30-40 minutes. Steps involving 'installation of qubes template' can take an especially long time.</p>
+								    <p>Once completed, remove the smaller USB thumbdrive and restart the machine. Boot from USB again, this time choosing the larger USB drive.</p>
+								</div>
+								<div class="inner">
+									<h3>7. Qubes Configuration</h3>
+									<p>After boot, use your encryption passphrase to login. Follow along with setup wizard to establish users, passwords, and date/time configuration.</p>
+									<ul>
+										<li>In the 'Create VMs' step, create 'default system qubes' and 'create whonix gateway'.</li>
+										<li>Wait for VM creation, then Qubes will startup and you can login with the user you just created.</li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+					
+					
+				<!-- Three -->
+				<section id="three" class="wrapper style3 spotlights">
+					<section>
+						<div class="content">
+						<h1>Setting up a Qubes Template </h1>
+							<div class="inner">
+								<h3>Templates</h3>
+								<p>In Qubes, a 'template' refers to a preconfigured set of software packages that can be used as the basis for launching a new Virtual Machine(VM)</p>
+								<h3>Qubes/AppVM</h3>
+								<p>A Qube/AppVM is an isolated environment that inherits the configuration of the template used during building.</p>
+								<h3>Example</h3>
+								<p>A Qubes user can create a template that is Debian based, has Java installed, and includes several important libraries. That user can then create several unique VMs that all use that same template foundation, but keep their storage and communications isolated. </p>
+							</div>
+							<div class="inner">
+								<h3>dom0</h3>
+								<p>dom0 is the central foundational environment within the Qubes OS. dom0 is where VMs can be created/edited/destroyed, but should not be viewed as a template where software should be installed.</p>
+							</div>
+							<div class="inner">
+								<h3>Creating Base Template</h3>
+								<ul>
+									<li>Open the Qubes menu in the bottom left, open 'System Tools > Konsole'. This opens the terminal for the main dom0 environment.</li>
+									<li>In the terminal run: qvm-clone debian-8 debian-8-backports</li> 
+									<li>The above step creates a debian based template into which we can load the needed packages</li>
+									<li>Ensure you are connected to the internet before continuing.</li>
+								</ul>
+							</div>
+							<div class="inner">
+								<h3>Adding Necessary Sources</h3>
+								<ul>
+									<li>Open the Qubes menu in the bottom left, open 'template:debian-8-backports terminal'. This will open a terminal inside of our newly created template.</li>
+									<li>In the terminal run: sudo vi /etc/apt/sources.list</li>
+									<li>Once the vi screen opens, hit the 'i' key to  begin editing</li>
+									<li>Add the following line to the file: deb http://http.debian.net/debian jessie-backports main</li>
+									<li>Hit the 'ESC' key, then type :x and press ENTER. This saves our changes.</li>
+									<li>In the terminal run: 'sudo apt-get update' . (This may take some time to complete)</li>
+								</ul>
+							</div>
+							
+							<div class="inner">
+								<h3>Adding Packages</h3>
+								<ul>
+									<li>In the debian-8-backports terminal, run: ' sudo apt-get -t jessie-backports install openjdk-8-jre openjfx '</li>
+									<li>Confirm the installation by hitting 'Y'</li>
+									<li>In the same terminal, run: sudo apt-get install unzip</li>
+								</ul>
+							</div>
+							</div>
+						</section>
+					</section>
+					
+				<!-- Four -->
+					<section id="four" class="wrapper style2 spotlights">
+						<section>
+							<div class="content">
+							<h1>Installing Martus</h1>
+							<div class="inner">
+								<h3>Creating a Martus VM</h3>
+								<ul>
+									<li>Open the dom0 terminal by opening the Qubes menu in the bottom left, open 'System Tools > Konsole'.</li>
+									<li>Run:' qvm-create -t debian-8-backports -L blue martus and qvm-prefs -s martus netvm sys-firewall '</li>
+									<li>The above step will generate a new VM named 'Martus' based on the debian-8-backports template.</li>
+								</ul>
+							</div>
+							
+							<div class="inner">
+								<h3>Download and Install Martus</h3>
+								<ul>
+									<li>Open the Qubes menu in the bottom left. Open 'domain:martus iceweasel browser'.</li>
+									<li>Visit https://martus.org in the browser and download the Martus zip to a location of your choice  (Home for example).</li>
+									<li>Using the Qubes VM Manager (available under System Tools) Restart both the 'debian-8-backports' and 'martus' VMs.</li>
+									<li>From the Qubes menu, open: 'domain:martus terminal' navigate to your storage directory and run:' unzip Martus-5.1.1.zip '</li>
+									<li>In the terminal, run:' cd MartusClient-5.1.1 ' followed by ' java -jar martus.jar '</li>
+									<li>Setup and use Martus!</li>
+								</ul>
 							</div>
 						</div>
 					</section>
+				</section>
+				
+				<!-- Five -->
+					<section id="five" class="wrapper style3 spotlights">
+					<section>
+						<div class="content">
+						<h1>Notes on  Process </h1>
+							<div class="inner">
+								<h3>Utilizing Tor</h3>
+								<p>Using the above process, a user can still use the built-in Tor in Martus. Another option to explore is to use the Tor that's present in Qubes itself. During the 'qvm-create' step you can replace 'sys-firewall' with 'sys-whonix' to create a VM with the Tor network protocol.</p>
+								<h3>Window Sizing Issues</h3>
+								<p>Sometimes on first run, Martus may start with a very small window. You can use the mouse to resize, and the issue should not persist on subsequent runs.</p>
+								<h3>Prebuilt Template</h3>
+								<p>Based on user feedback, we may explore creating a preconfigured Martus template for the Qubes ecosystem. In consultation with the Qubes development team we would need to understand the potential limitations as well as the operational security needed to responsibly distribute the template.</p>
+							</div>
+							</div>
+						</section>
+					</section>
+
+				
 
 			</div>
 
@@ -191,7 +253,7 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>
